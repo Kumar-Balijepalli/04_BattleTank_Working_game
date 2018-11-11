@@ -14,15 +14,15 @@ void ATankPlayerController::BeginPlay()
 {
 	// Always call this before anything else, so that the parent class's BeginPlay is called.
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("PlayerController Be gin Play"));
-	ATank *PossessedTank = GetControlledTank();
+	/*UE_LOG(LogTemp, Warning, TEXT("PlayerController Begin Play"));*/
+	ATank *ControlledTank = GetControlledTank();
 
-	if (PossessedTank == nullptr)
+	if (ControlledTank == nullptr)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Player does not possess any tank!"));
 		return;
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("Player Possessing: %s"),*(PossessedTank->GetName()))
+	UE_LOG(LogTemp, Warning, TEXT("Player Possessing: %s"),*(ControlledTank->GetName()))
 
 }
