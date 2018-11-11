@@ -47,8 +47,8 @@ void ATankPlayerController::AimTowardsCrossHair()
 
 	if (GetSightRayHitLocation(HitLocation))
 	{
-		// If it hits the landscape 
-		UE_LOG(LogTemp, Warning, TEXT("HitLocation %s"), *HitLocation.ToString());
+		GetControlledTank()->AimAt(HitLocation);
+		
 			// Tell the control tank to aim at this point.
 	}
 }
