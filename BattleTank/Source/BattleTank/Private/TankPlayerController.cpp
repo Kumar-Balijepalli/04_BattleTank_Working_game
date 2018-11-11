@@ -2,14 +2,6 @@
 
 #include "TankPlayerController.h"
 
-
-ATank * ATankPlayerController::GetControlledTank() const
-{
-	// We want to return the tank we are controlling.
-	// The cast is needed as GetPawn returns only APawn *, and is not specific to which pawn.
-	return Cast<ATank>(GetPawn());
-}
-
 void ATankPlayerController::BeginPlay()
 {
 	// Always call this before anything else, so that the parent class's BeginPlay is called.
@@ -25,4 +17,30 @@ void ATankPlayerController::BeginPlay()
 
 	UE_LOG(LogTemp, Warning, TEXT("Player Possessing: %s"),*(ControlledTank->GetName()))
 
+}
+
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	// Always do the super/parent classes function first.
+	Super::Tick(DeltaTime);
+	UE_LOG(LogTemp, Warning, TEXT("Called TankPlayerController's tick function"));
+	AimTowardsCrossHair();
+}
+
+
+ATank * ATankPlayerController::GetControlledTank() const
+{
+	// We want to return the tank we are controlling.
+	// The cast is needed as GetPawn returns only APawn *, and is not specific to which pawn.
+	return Cast<ATank>(GetPawn());
+}
+
+void ATankPlayerController::AimTowardsCrossHair()
+{
+	if (!GetControlledTank())
+		return;
+
+	// Get World Location if Line trace through crosshair.
+	// If it hits the landscape 
+		// Tell the control tank to aim at this point.
 }
