@@ -36,9 +36,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 }
 
 // The function that will AimAt some tank. The tank name will need to be passed as a parameter.
-void UTankAimingComponent::AimAt(FVector &HitLocation)
+void UTankAimingComponent::AimAt(FVector &HitLocation, float LaunchSpeed)
 {
-	auto AimedAtObject = GetOwner()->GetName();
-	auto BarrelLocation = Barrel->GetComponentLocation().ToString();
-	UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s from %s"), *AimedAtObject, *HitLocation.ToString(),*BarrelLocation);
+	UE_LOG(LogTemp, Warning, TEXT("Firing at %f LaunchSpeed"),LaunchSpeed);
 }
