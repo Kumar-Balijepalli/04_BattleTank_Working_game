@@ -2,6 +2,7 @@
 
 #include "TankPlayerController.h"
 #include "Engine/World.h"
+#include "Tank.h"
 #include "GameFramework/Actor.h"
 #include "Public/CollisionQueryParams.h"
 #include "Math/Vector2D.h"

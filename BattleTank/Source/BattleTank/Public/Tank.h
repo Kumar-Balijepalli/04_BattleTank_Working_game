@@ -7,7 +7,8 @@
 #include "Tank.generated.h"
 
 class UTankBarrel;
-class UTankAimingComponent;
+class ATank;
+class UTankAimingComponent; // Forward declaration to prevent code duplication and shorten compile times
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
