@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+
 #include "Tank.h"
 
 
@@ -13,7 +14,7 @@ ATank::ATank()
 	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
 }
 
-void ATank::SetBarrelReference(UStaticMeshComponent *BarrelToSet)
+void ATank::SetBarrelReference(UTankBarrel *BarrelToSet)
 {
 	if (BarrelToSet == nullptr) { return; }
 	TankAimingComponent->SetBarrelReference(BarrelToSet);
