@@ -54,4 +54,9 @@ public:
 
 	// Local barrel reference for spawning projectile.
 	UTankBarrel *Barrel = nullptr;
+
+	// This is to prevent the tanks from firing every frame.
+	float ReloadTimeInSeconds = 3.0f;
+
+	double LastFireTime = 0.0;
 };
