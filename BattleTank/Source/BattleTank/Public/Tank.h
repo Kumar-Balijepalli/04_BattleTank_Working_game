@@ -46,17 +46,21 @@ public:
 
 	void AimAt(FVector HitLocation);
 
-	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 4000.0f; 
-	
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
+	// This is to prevent the tanks from firing every frame.
+	// Making this EditDefaultsOnly to make all tanks have the same value.
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float ReloadTimeInSeconds = 3.0f;
+
+	// EditDefaultsOnly because, all tanks must have the same value
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float LaunchSpeed = 4000.0f; 
+	
 	// Local barrel reference for spawning projectile.
 	UTankBarrel *Barrel = nullptr;
 
-	// This is to prevent the tanks from firing every frame.
-	float ReloadTimeInSeconds = 3.0f;
-
 	double LastFireTime = 0.0;
+
 };

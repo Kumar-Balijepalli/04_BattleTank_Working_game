@@ -23,7 +23,7 @@ void ATankAIController::Tick(float DeltaTime)
 		// Aim Towards the Player
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
 		
-		// TODO Don't Fire every Frame.
+		// Fires projectile, but after reload time has elapsed.
 		ControlledTank->Fire();
 	}
 	

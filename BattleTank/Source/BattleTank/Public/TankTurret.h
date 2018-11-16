@@ -18,6 +18,7 @@ public:
 	// -1 is max downward movement and +1 is max upward movement
 	void Rotate(float RelativeSpeed);
 private:
-	UPROPERTY(EditAnywhere, Category = Setup)
+	// EditDefaultsOnly because, all tank barrels must have the same value
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 		float MaxDegreesPerSecond = 25.0f; // Sensible Default
 };

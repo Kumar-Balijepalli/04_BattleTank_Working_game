@@ -19,12 +19,15 @@ public:
 	void Elevate(float RelativeSpeed);
 
 private:
-	UPROPERTY(EditAnywhere, Category = Setup)
+	// EditDefaultsOnly because, all tank barrels must have the same value
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float MaxDegreesPerSecond = 10.0f; // Sensible Default
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	// EditDefaultsOnly because, all tank barrels must have the same value
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float MaxElevationDegrees = 40.0;	
 	
-	UPROPERTY(EditAnywhere, Category = Setup)
+	// EditDefaultsOnly because, all tank barrels must have the same value
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float MinElevationDegrees = 0.0;   
 };
